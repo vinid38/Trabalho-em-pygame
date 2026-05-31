@@ -9,8 +9,7 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 
 - Nome do integrante 1: Daniel Ischaber Xavier
 - Nome do integrante 2: William Augusto Lobo Freire
-- Nome do integrante 3: Vinicius Daniel Santos
-- Nome do integrante 4: 
+- Nome do integrante 3: Vinicius Daniel Santos 
 
 ## Estrutura do projeto
 
@@ -44,33 +43,3 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 -Espaço/W: pular
 -J: Usar poder
 -ESC: pausar ou sair do jogo
-
-## Como executar o projeto
-
-### 1. Clonar o repositório
-
-```bash
-git clone LINK_DO_REPOSITORIO
-cd NOME_DA_PASTA
-pip install -r requirements.txt
-python main.py
-```
-
-## Como executar os testes
-
-```bash
-python -m pytest
-```
-
-## Checklist mínimo para entrega
-
-- Preencher este README com nome final, descrição real, regras e controles do jogo.
-- Atualizar `docs/proposta.MD` com a proposta do grupo.
-- Garantir que o jogo executa com `python main.py`.
-- Garantir que os testes passam com `pytest`.
-
-## Observações para os alunos
-
-- Mantenham o código organizado em módulos pequenos e com responsabilidade clara.
-- Comentem partes importantes da lógica, principalmente regras do jogo.
-- Registrem decisões técnicas no README do grupo ao longo do desenvolvimento.
