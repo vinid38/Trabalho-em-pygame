@@ -1,4 +1,5 @@
 import pygame
+import random
 
 pygame.init()
 
@@ -8,11 +9,25 @@ altura = 600
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption("Lizard Adventure")
 
+fonte = pygame.font.SysFont(None, 36)
 clock = pygame.time.Clock()
 
 lagarto = pygame.Rect(100, 450, 50, 50)
 
 velocidade_pulo = 0
+pontos = 0
+
+coletaveis = []
+
+for i in range(5):
+    coletaveis.append(
+        pygame.Rect(
+            random.randint(150, 750),
+            random.randint(250, 450),
+            20,
+            20
+        )
+    )
 
 rodando = True
 
@@ -42,10 +57,21 @@ while rodando:
         lagarto.bottom = 500
         velocidade_pulo = 0
 
+    for item in coletaveis[:]:
+        if lagarto.colliderect(item):
+            coletaveis.remove(item)
+            pontos += 10
+
     tela.fill((120, 200, 255))
 
     pygame.draw.rect(tela, (120, 80, 40), (0, 500, 800, 100))
     pygame.draw.rect(tela, (0, 180, 0), lagarto)
+
+    for item in coletaveis:
+        pygame.draw.circle(tela, (255, 255, 0), item.center, 10)
+
+    texto = fonte.render("Pontos: " + str(pontos), True, (0, 0, 0))
+    tela.blit(texto, (10, 10))
 
     pygame.display.update()
 
